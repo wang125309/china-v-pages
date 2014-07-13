@@ -14,6 +14,7 @@ mapleque.slide=function(conf){
   step=$contlist.length>0?$($contlist[0]).width():1;
 
   step=step||1;
+
   var moveto=function(toindex){
     index=toindex<0?0:toindex;
     index=index>($contlist.length-1)?($contlist.length-1):index;
@@ -33,6 +34,8 @@ mapleque.slide=function(conf){
     var left=start+moving;
     console.log('move from ',start,left);
     $contbox.css('left',left+'px');
+    if (rotate!=0){
+    }
   };
   var moveend=function(){
     var curleft=-parseInt($contbox.css('left'));
@@ -73,8 +76,7 @@ mapleque.slide=function(conf){
     var cur=e.pageX;
     var moving=cur-startX;
     console.log(moving);
-    move(startLeft,moving)
-
+    move(startLeft,moving);
   });
   
 };

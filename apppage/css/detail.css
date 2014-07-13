@@ -5,6 +5,7 @@ margin:0;
 padding:0;
 }
 .main{
+position:relative;
 width:100%;
 height:100%;
 text-align:center;
@@ -18,6 +19,7 @@ width:640px;
 height:86px;
 margin-top:-86px;
 text-align:center;
+bottom:0;
 }
 .footer .dot-bar{
 margin:auto;
@@ -38,9 +40,12 @@ position:relative;
 left:0;
 }
 .section{
-float:left;
+position:absolute;
 width:640px;
 height:960px;
+-webkit-transform-origin:50% -100%;
+-moz-transform-origin:50% -100%;
+transform-origin:50% -100%;
 }
 .topic-bar{
 margin:auto;
