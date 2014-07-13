@@ -10,6 +10,7 @@ height:100%;
 text-align:center;
 overflow:hidden;
 white-space:nowrap;
+background:url(../images/sub-back.png) no-repeat;
 }
 .footer{
 position:absolute;
@@ -40,7 +41,6 @@ left:0;
 float:left;
 width:640px;
 height:960px;
-background:url(../images/sub-back.png) no-repeat;
 }
 .topic-bar{
 margin:auto;

@@ -15,16 +15,18 @@ mapleque.slide=function(conf){
 
   step=step||1;
   var moveto=function(toindex){
-    var toleft=-toindex*step+'px';
-    index=toindex;
-    console.log('will move to',toleft,toindex,step);
+    index=toindex<0?0:toindex;
+    index=index>($contlist.length-1)?($contlist.length-1):index;
+    var toleft=-index*step+'px';
+    console.log('will move to',toleft,index,step,$contlist.length,$dotlist.length);
     $contbox.stop();
     $contbox.animate({left:toleft},500);
 
-    if ($dotlist&&$dotlist.length>toindex){
-      $($dotlist[toindex]).addClass(dotcur);
-      $($dotlist[toindex]).siblings().removeClass(dotcur);
+    if ($dotlist&&$dotlist.length>index){
+      $($dotlist[index]).addClass(dotcur);
+      $($dotlist[index]).siblings().removeClass(dotcur);
     }
+    document.location.hash=index;
   };
   moveto(index);
   var move=function(start,moving){
@@ -38,6 +40,8 @@ mapleque.slide=function(conf){
     if (curleft%step>0){
       var toindex=curleft%step*2>step?Math.floor(curleft/step)+1:Math.floor(curleft/step);
       moveto(toindex);
+    }else if (curleft<0){
+      moveto(0);
     }
   }
   var sliding=false,
