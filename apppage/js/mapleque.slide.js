@@ -11,9 +11,13 @@ mapleque.slide=function(conf){
   index=conf.index,
   $leftarr=conf.leftarr||$(),
   $rightarr=conf.rightarr||$(),
-  step=$contlist.length>0?$($contlist[0]).width():1;
-
-  step=step||1;
+  maxnum=4;
+  var step=$contbox.parent().width()/maxnum;
+  var totalwidth=step*$contlist.length;
+  $contlist.each(function(){
+    $(this).css('width',step+'px');
+  });
+  $contbox.css('width',totalwidth+'px');
 
   var moveto=function(toindex){
     index=toindex<0?0:toindex;
