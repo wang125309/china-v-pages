@@ -101,5 +101,28 @@ var
     var moving=cur-startX;
     move(moving);
   });
+  $(document.body).touchstart(function(e){
+    console.log('set transition none');
+    $contlist.each(function(){
+      $(this).css({
+        '-webkit-transition':'all 0s ease',
+        '-moz-transition':'all 0s ease',
+        'transition':'all 0s ease'
+      });
+    });
+    sliding=true;
+    startX=e.pageX;
+  });
+  $(document.body).touchend(function(e){
+    if (!sliding)return;
+    sliding=false;
+    moveend();
+  });
+  $(document.body).touchmove(function(e){
+    if (!sliding)return;
+    var cur=e.pageX;
+    var moving=cur-startX;
+    move(moving);
+  });
 };
 })();
