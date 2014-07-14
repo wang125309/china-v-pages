@@ -38,8 +38,6 @@ mapleque.slide=function(conf){
     var left=start+moving;
     console.log('move from ',start,left);
     $contbox.css('left',left+'px');
-    if (rotate!=0){
-    }
   };
   var moveend=function(){
     var curleft=-parseInt($contbox.css('left'));

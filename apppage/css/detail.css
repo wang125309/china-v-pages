@@ -1,6 +1,6 @@
 html,body{
-width:640px;
-height:960px;
+width:100%;/*640px;*/
+height:100%;/*960px;*/
 margin:0;
 padding:0;
 }
@@ -16,9 +16,9 @@ background-size:100% 100%;
 }
 .footer{
 position:absolute;
-width:640px;
-height:86px;
-margin-top:-86px;
+width:100%;/*640px;*/
+height:8.96%;/*86px;*/
+margin-top:-8.96%;/*-86px;*/
 text-align:center;
 bottom:0;
 }
@@ -36,44 +36,60 @@ background:url(../images/dot.png) no-repeat;
 background:url(../images/dot-sel.png) no-repeat;
 }
 .section-list{
-width:4480px;
+width:100%;/*4480px;*/
 position:relative;
 left:0;
 }
 .section{
 position:absolute;
-width:640px;
-height:960px;
--webkit-transform-origin:50% -100%;
--moz-transform-origin:50% -100%;
-transform-origin:50% -100%;
+width:100%;/*640px;*/
+height:100%;/*960px;*/
+-webkit-transform-origin:50% -640px;
+-moz-transform-origin:50% -640px;
+transform-origin:50% -640px;
 }
 .topic-bar{
 margin:auto;
-padding-top:116px;
+padding-top:12%;/*116px;*/
+width:50.31%;/*332px;*/
+height:auto;
+}
+.topic-bar img{
+width:100%;
+height:100%;
 }
 .btn-bar{
-height:358px;
+height:37.3%;/*358px;*/
 margin:auto;
 }
 .btn,.btn2,.btn4{
 display:inline-block;
 }
 .btn{
-padding:123px 0;
+padding:19.2% 0;/*123px 0;*/
+width:24.3%;/*156px;*/
+height:auto;
 }
 .btn2{
-padding:57px 23px;
+padding:8.9% 3.6%;/*57px 23px;*/
+width:29.5%;/*189px;*/
+height:auto;
 }
 .btn4{
-margin-top:111px;
+margin-top:17.3%;/*111px;*/
+width:15.9%;/*102px;*/
+height:auto;
+}
+.btn img,.btn2 img,.btn4 img{
+width:100%;
+height:100%;
 }
 .btn4 img{
-padding:0 13px 36px;
+padding:0 12.7% 35.3%;/*0 13px 36px;*/
 }
 .btn4:nth-of-type(2) img{
-padding:36px 13px 0;
+padding:35.3% 12.7% 0;/*36px 13px 0;*/
 }
 .btn4:nth-of-type(3) img{
-padding:36px 13px 0;
+padding:35.3% 12.7% 0;/*36px 13px 0;*/
 }
