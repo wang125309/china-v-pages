@@ -72,7 +72,7 @@ var
 
   var sliding=false,
   startX,startLeft;
-  $($contbox).mousedown(function(e){
+  $(document.body).mousedown(function(e){
     console.log('set transition none');
     $contlist.each(function(){
       $(this).css({
