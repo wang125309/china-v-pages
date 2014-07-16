@@ -53,13 +53,10 @@ var
   };
   var moveend=function(){
     console.log('set transition rotate');
-    $contlist.each(function(){
-      $(this).css({
-        '-webkit-transition':'all 0.5s ease 0',
-        '-moz-transition':'all 0.5s ease 0',
-        'transition':'all 0.5s ease 0'
-      });
-      console.log($(this).css('-webkit-transition'));
+    $contlist.css({
+      '-webkit-transition':'all 0.5s ease 0',
+      '-moz-transition':'all 0.5s ease 0',
+      'transition':'all 0.5s ease 0'
     });
     console.log('move end',currotate,rotate/3);
     if (Math.abs(currotate)>rotate/3){
@@ -105,12 +102,10 @@ var
   */
   $(document.body).bind('touchstart',function(e){
     console.log(e);
-    $contlist.each(function(){
-      $(this).css({
-        '-webkit-transition':'all 0s ease',
-        '-moz-transition':'all 0s ease',
-        'transition':'all 0s ease'
-      });
+    $contlist.css({
+      '-webkit-transition':'all 0s ease',
+      '-moz-transition':'all 0s ease',
+      'transition':'all 0s ease'
     });
     sliding=true;
     startX=e.targetTouches[0].pageX;

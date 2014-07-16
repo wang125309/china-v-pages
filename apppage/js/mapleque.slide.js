@@ -17,16 +17,11 @@ mapleque.slide=function(conf){
   $contlist.each(function(){
     $(this).css('width',step+'px');
   });
-  $contbox.css({
-    'width':totalwidth+'px',
-    '-webkit-transition':'all 0.5s ease',
-    '-moz-transition':'all 0.5s ease',
-    'transition':'all 0.5s ease'
-    });
+  $contbox.css({'width':totalwidth+'px'});
 
   var moveto=function(toindex){
     index=toindex<0?0:toindex;
-    index=index>($contlist.length-1)?($contlist.length-1):index;
+    index=index>($contlist.length-4)?($contlist.length-4):index;
     var toleft=-index*step+'px';
     console.log('will move to',toleft,index,step,$contlist.length,$dotlist.length);
     $contbox.css({left:toleft});
@@ -44,6 +39,11 @@ mapleque.slide=function(conf){
     $contbox.css('left',left+'px');
   };
   var moveend=function(){
+    $contbox.css({
+      '-webkit-transition':'all 0.5s ease 0',
+      '-moz-transition':'all 0.5s ease 0',
+      'transition':'all 0.5s ease 0'
+    });
     var curleft=-parseInt($contbox.css('left'));
     console.log('moveend',curleft,step);
     if (curleft%step>0){
@@ -63,6 +63,11 @@ mapleque.slide=function(conf){
   });
   /*
   $($contbox).mousedown(function(e){
+    $contbox.css({
+      '-webkit-transition':'none',
+      '-moz-transition':'none',
+      'transition':'none'
+    });
     sliding=true;
     startX=e.pageX;
     startLeft=parseInt($contbox.css('left'));
@@ -71,12 +76,6 @@ mapleque.slide=function(conf){
     if (!sliding)return;
     sliding=false;
     moveend();
-  });
-  $(document.body).mouseleave(function(e){
-    if (!sliding)return;
-    sliding=false;
-    moveend();
-    console.log(e);
   });
   $(document.body).mousemove(function(e){
     if (!sliding)return;
@@ -87,6 +86,11 @@ mapleque.slide=function(conf){
   });
   */
   $($contbox).bind('touchstart',function(e){
+    $contbox.css({
+      '-webkit-transition':'none',
+      '-moz-transition':'none',
+      'transition':'none'
+    });
     sliding=true;
     startX=e.targetTouches[0].pageX;
     startLeft=parseInt($contbox.css('left'));
