@@ -40,7 +40,8 @@ var
   moveto(index);
   var currotate=0,nextindex;
   var move=function(moving){
-    var deltarotate=-moving/step*rotate;
+    var deltarotate=-2*180*Math.asin(moving/step)/Math.PI;
+    console.log(deltarotate);
     $contlist.each(function(i,e){
       var torotate=(index-i)*rotate+deltarotate;
       $(e).css({
