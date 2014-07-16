@@ -40,7 +40,7 @@ var
   moveto(index);
   var currotate=0,nextindex;
   var move=function(moving){
-    var deltarotate=-2*180*Math.asin(moving/step)/Math.PI;
+    var deltarotate=-180*Math.asin(moving/(2*step))/Math.PI;
     console.log(deltarotate);
     $contlist.each(function(i,e){
       var torotate=(index-i)*rotate+deltarotate;
@@ -55,9 +55,9 @@ var
   var moveend=function(){
     console.log('set transition rotate');
     $contlist.css({
-      '-webkit-transition':'all 0.5s ease 0',
-      '-moz-transition':'all 0.5s ease 0',
-      'transition':'all 0.5s ease 0'
+      '-webkit-transition':'all 0.5s fast',
+      '-moz-transition':'all 0.5s fast',
+      'transition':'all 0.5s fast'
     });
     console.log('move end',currotate,rotate/3);
     if (Math.abs(currotate)>rotate/3){
@@ -104,9 +104,9 @@ var
   $(document.body).bind('touchstart',function(e){
     console.log(e);
     $contlist.css({
-      '-webkit-transition':'all 0s ease',
-      '-moz-transition':'all 0s ease',
-      'transition':'all 0s ease'
+      '-webkit-transition':'none',
+      '-moz-transition':'none',
+      'transition':'none'
     });
     sliding=true;
     startX=e.targetTouches[0].pageX;
