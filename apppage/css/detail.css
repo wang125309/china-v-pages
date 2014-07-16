@@ -35,6 +35,20 @@ background:url(../images/dot.png) no-repeat;
 .cur{
 background:url(../images/dot-sel.png) no-repeat;
 }
+.left-barrier,.right-barrier{
+position:fixed;
+background:#ecc013;
+width:23%;
+height:45%;
+z-index:10;
+top:0;
+}
+.left-barrier{
+left:0;
+}
+.right-barrier{
+right:0;
+}
 .section-list{
 width:100%;/*4480px;*/
 position:relative;
