@@ -51,16 +51,17 @@ mapleque.slide=function(conf){
   }
   var sliding=false,
   startX,startLeft;
-  $($contbox).mousedown(function(e){
-    sliding=true;
-    startX=e.pageX;
-    startLeft=parseInt($contbox.css('left'));
-  });
   $leftarr.click(function(){
     moveto(index-1);
   });
   $rightarr.click(function(){
     moveto(index+1);
+  });
+  /*
+  $($contbox).mousedown(function(e){
+    sliding=true;
+    startX=e.pageX;
+    startLeft=parseInt($contbox.css('left'));
   });
   $(document.body).mouseup(function(e){
     if (!sliding)return;
@@ -80,7 +81,24 @@ mapleque.slide=function(conf){
     console.log(moving);
     move(startLeft,moving);
   });
-  
+  */
+  $($contbox).bind('touchstart',function(e){
+    sliding=true;
+    startX=e.targetTouches[0].pageX;
+    startLeft=parseInt($contbox.css('left'));
+  })
+  $(document.body).bind('touchend',function(e){
+    if (!sliding)return;
+    sliding=false;
+    moveend();
+  })
+  $(document.body).bind('touchmove',function(e){
+    if (!sliding)return;
+    var cur=e.targetTouches[0].pageX;
+    var moving=cur-startX;
+    console.log(moving);
+    move(startLeft,moving);
+  })
 };
 
 })();

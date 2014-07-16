@@ -72,6 +72,7 @@ var
 
   var sliding=false,
   startX,startLeft;
+  /*
   $(document.body).mousedown(function(e){
     console.log('set transition none');
     $contlist.each(function(){
@@ -101,8 +102,9 @@ var
     var moving=cur-startX;
     move(moving);
   });
-  $(document.body).touchstart(function(e){
-    console.log('set transition none');
+  */
+  $(document.body).bind('touchstart',function(e){
+    console.log(e);
     $contlist.each(function(){
       $(this).css({
         '-webkit-transition':'all 0s ease',
@@ -111,16 +113,16 @@ var
       });
     });
     sliding=true;
-    startX=e.pageX;
+    startX=e.targetTouches[0].pageX;
   });
-  $(document.body).touchend(function(e){
+  $(document.body).bind('touchend',function(e){
     if (!sliding)return;
     sliding=false;
     moveend();
   });
-  $(document.body).touchmove(function(e){
+  $(document.body).bind('touchmove',function(e){
     if (!sliding)return;
-    var cur=e.pageX;
+    var cur=e.targetTouches[0].pageX;
     var moving=cur-startX;
     move(moving);
   });
