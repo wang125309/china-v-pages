@@ -147,6 +147,7 @@ padding:0 1em 0.25em;
 }
 .sub-7-4 .form .line:last-child{
 padding-bottom:0.5em;
+text-align:center;
 }
 .sub-7-4 .form label{
 display:inline-block;
@@ -154,13 +155,13 @@ width:9em;
 vertical-align:top;
 }
 .sub-7-4 .form input,textarea{
-width:15em;
+width:12em;
 }
 .sub-7-4 .form textarea{
 height:6em;
 }
 .sub-7-4 .form select{
-width:15.5em;
+width:12.5em;
 }
 .sub-7-4 .form .submit{
 padding:0;
