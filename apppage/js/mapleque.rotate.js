@@ -59,13 +59,14 @@ var
       '-moz-transition':'all 0.5s fast',
       'transition':'all 0.5s fast'
     });
-    console.log('move end',currotate,rotate/3);
-    if (Math.abs(currotate)>rotate/3){
+    console.log('move end',currotate,rotate);
+    if (Math.abs(currotate)*2>rotate){
       var nextindex=currotate>0?index+1:index-1;
       moveto(nextindex);
     }else{
       moveto(index);
     }
+    currotate=0;
   };
 
   var sliding=false,
