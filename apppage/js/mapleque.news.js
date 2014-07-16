@@ -25,7 +25,52 @@ initFolder=function(){
   });
 },
 //轮播
-initScroll=function(){},
+initScroll=function(){
+  var speed=3000,//自动切换时间
+  curClass='cur';
+  $('.scroll-banner').css({
+    width:'100%',
+    overflow:'hidden'
+  });
+  var $box=$('.scroll-banner .box'),
+  $btnlist=$('.btn .dot');
+  if ($box.length<1)return;
+  var $bannerlist=$box.children(),
+  min=0,
+  max=$bannerlist.length-1;
+  if (max<1)return;
+  var step=$box.width(),
+  totalWidth=step*(max+1);
+  $bannerlist.css('width',step+'px');
+  $box.css({
+    width:totalWidth+'px',
+    left:0,
+    '-webkit-transition':'all 0.5s ease',
+    '-moz-transition':'all 0.5s ease',
+    'transition':'all 0.5s ease'
+  });
+  var curindex=0;
+  var moveto=function(index){
+    var toindex=index;
+    toindex=toindex>min?toindex:min;
+    toindex=toindex<max?toindex:max;
+    $box.css({
+      left:-toindex*step+'px'
+    });
+    $btnlist.each(function(i,e){
+      if(i==toindex)
+        $(e).addClass(curClass);
+      else
+        $(e).removeClass(curClass);
+    })
+    curindex=toindex;
+  };
+  moveto(curindex);
+  var timer=setInterval(function(){
+    var toindex=(curindex+1)%(max+1);
+    moveto(toindex);
+  },speed);
+},
 init=function(){
   initFolder();
   initScroll();
