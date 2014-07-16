@@ -11,7 +11,7 @@ height:100%;
 text-align:center;
 overflow:hidden;
 white-space:nowrap;
-background:url(../images/sub-back.png) no-repeat;
+background:url(../images/sub-back.png?v1) no-repeat;
 background-size:100% 100%;
 }
 .footer{
@@ -50,7 +50,7 @@ transform-origin:50% -640px;
 }
 .topic-bar{
 margin:auto;
-padding-top:12%;/*116px;*/
+padding-top:22%;/*116px;*/
 width:50.31%;/*332px;*/
 height:auto;
 }
