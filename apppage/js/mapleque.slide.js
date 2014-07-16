@@ -17,15 +17,19 @@ mapleque.slide=function(conf){
   $contlist.each(function(){
     $(this).css('width',step+'px');
   });
-  $contbox.css('width',totalwidth+'px');
+  $contbox.css({
+    'width':totalwidth+'px',
+    '-webkit-transition':'all 0.5s ease',
+    '-moz-transition':'all 0.5s ease',
+    'transition':'all 0.5s ease'
+    });
 
   var moveto=function(toindex){
     index=toindex<0?0:toindex;
     index=index>($contlist.length-1)?($contlist.length-1):index;
     var toleft=-index*step+'px';
     console.log('will move to',toleft,index,step,$contlist.length,$dotlist.length);
-    $contbox.stop();
-    $contbox.animate({left:toleft},500);
+    $contbox.css({left:toleft});
 
     if ($dotlist&&$dotlist.length>index){
       $($dotlist[index]).addClass(dotcur);
