@@ -69,21 +69,6 @@ padding-top:22%;/*116px;*/
 width:50.31%;/*332px;*/
 height:auto;
 }
-/*@media (max-width:435px) {
-    .topic-bar {
-        height:220px;
-    }
-}
-@media (max-width:360px) {
-    .topic-bar {
-        height:auto;
-    }
-}
-@media (max-width:320px) {
-    .topic-bar {
-        height:auto;
-    }
-}*/
 .topic-bar img{
 width:100%;
 }
