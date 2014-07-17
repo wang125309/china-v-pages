@@ -61,7 +61,7 @@ height:100%;
 }
 .arr-left,.arr-right{
 height:100%;
-padding:4% 0 0;
+padding:3.5% 0 0;
 margin:0;
 /*position:absolute;*/
 float:left;
@@ -74,5 +74,5 @@ text-align:right;
 }
 .arr-left img,.arr-right img{
 /*width:100%;*/
-/*height:50%;*/
+height:30%;
 }

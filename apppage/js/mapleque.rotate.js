@@ -19,6 +19,10 @@ var
   });
   var moveto=function(toindex){
     var oldindex=index;
+    if (toindex<0||toindex>$contlist.length-1){
+      document.location.href="index.html";
+      return;
+    }
     index=toindex<0?0:toindex;
     index=index>($contlist.length-1)?($contlist.length-1):index;
     $contlist.each(function(i,e){
