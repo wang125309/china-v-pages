@@ -9,5 +9,9 @@ $(function(){
       index:index,
       rotate:25
     });
+    $('#fan-center').bind('touch',function(){
+        alertify.set({ delay: 2000});
+        alertify.log("粉丝中心即将开启，敬请期待！");
+    });
   });
 })();
