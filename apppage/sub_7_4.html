@@ -44,24 +44,29 @@
         <label>反馈的问题类型</label>
         <select name="">
         <option value="">请选择反馈问题类型</option>
+        <option value="">我来说说产品问题</option>
+        <option value="">我买不到加多宝</option>
+        <option value="">我要卖加多宝</option>
+        <option value="">我要和加多宝合作</option>
+        <option value="">我是媒体</option>
         </select>
         <span class="ico"></span>
       </div>
       <div class="line">
         <label>您的姓名</label>
-        <input type="" placeholder="请输入您的真实姓名" name=""></input>
+        <input type="" placeholder="请输入您的真实姓名" name="" data-validate="required"></input>
       </div>
       <div class="line">
         <label>您的电话</label>
-        <input type="" placeholder="请输入您的电话" name=""></input>
+        <input type="" placeholder="请输入您的电话" name="" data-validate="phone"></input>
       </div>
       <div class="line">
         <label>您的邮箱</label>
-        <input type="" placeholder="请输入您的电子邮箱" name=""></input>
+        <input type="" placeholder="请输入您的电子邮箱" name="" data-validate="email"></input>
       </div>
       <div class="line">
         <label>情况说明</label>
-        <textarea value=""></textarea>
+        <textarea value="" data-validate="required"></textarea>
       </div>
       <div class="line">
         <input type="submit" value="提交表单" class="submit"></input>
