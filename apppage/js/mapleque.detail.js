@@ -15,5 +15,11 @@ $(function(){
             alertify.log("粉丝中心即将开启，敬请期待！");
         }
     });
+    $('#jiaV').bind('click',function(){
+        if ($('.alertify-log-show').length == 0){
+            alertify.set({ delay: 2000});
+            alertify.log("为正宗好声音加V投票活动在节目结束后马上开始哦~");
+        }
+    });
   });
 })();
