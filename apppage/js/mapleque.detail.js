@@ -18,7 +18,7 @@ $(function(){
     $('#jiaV').bind('click',function(){
         if ($('.alertify-log-show').length == 0){
             alertify.set({ delay: 2000});
-            alertify.log("为正宗好声音加V投票活动在节目结束后马上开始哦~");
+            alertify.log("为正宗好声音加V投票活动在18日节目首播结束后马上开始哦~");
         }
     });
   });

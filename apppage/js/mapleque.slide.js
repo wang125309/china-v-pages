@@ -2,7 +2,6 @@
 if (window.mapleque===undefined)window.mapleque={};
 if (window.mapleque.slide!==undefined)return;
 mapleque.slide=function(conf){
-  console.log('init slide',conf);
   var 
   $contbox=conf.contbox,
   $contlist=$contbox?$contbox.children():[],
@@ -23,7 +22,6 @@ mapleque.slide=function(conf){
     index=toindex<0?0:toindex;
     index=index>($contlist.length-4)?($contlist.length-4):index;
     var toleft=-index*step+'px';
-    console.log('will move to',toleft,index,step,$contlist.length,$dotlist.length);
     $contbox.css({left:toleft});
 
     if ($dotlist&&$dotlist.length>index){
@@ -35,7 +33,6 @@ mapleque.slide=function(conf){
   moveto(index);
   var move=function(start,moving){
     var left=start+moving;
-    console.log('move from ',start,left);
     $contbox.css('left',left+'px');
   };
   var moveend=function(){
@@ -45,7 +42,6 @@ mapleque.slide=function(conf){
       'transition':'all 0.5s ease 0'
     });
     var curleft=-parseInt($contbox.css('left'));
-    console.log('moveend',curleft,step);
     if (curleft%step>0){
       var toindex=curleft%step*2>step?Math.floor(curleft/step)+1:Math.floor(curleft/step);
       moveto(toindex);
@@ -81,7 +77,6 @@ mapleque.slide=function(conf){
     if (!sliding)return;
     var cur=e.pageX;
     var moving=cur-startX;
-    console.log(moving);
     move(startLeft,moving);
   });
   */
@@ -104,7 +99,6 @@ mapleque.slide=function(conf){
     if (!sliding)return;
     var cur=e.targetTouches[0].pageX;
     var moving=cur-startX;
-    console.log(moving);
     move(startLeft,moving);
   })
 };

@@ -7,6 +7,9 @@ font-family: "Microsoft YaHei";
 font-size:16px;
 background-color: #bd010d;
 }
+@media only screen and (-webkit-min-device-pixel-ratio:2.5){
+html,body{font-size:24px;}
+}
 a{
 text-decoration:none;
 color:inherit;
@@ -191,7 +194,7 @@ color:#000;
 /*新闻页*/
 .scroll-banner{
 width:100%;
-max-height:9.625em;
+/*max-height:9.625em;*/
 position:relative;
 }
 .scroll-banner .box{
@@ -257,10 +260,10 @@ padding:1.125em 10% 0.875em;
 }
 .post header h1{
 font-size:1.125em;
-line-height:2.25em;
+line-height:1.25em;
 margin:0;
 padding:0;
-white-space: nowrap;
+/*white-space: nowrap;*/
 overflow: hidden;
 word-break: break-word;
 text-overflow: ellipsis;
@@ -274,7 +277,7 @@ padding:0;
 }
 .post .banner{
 width:100%;
-max-height:220px;
+/*max-height:220px;*/
 }
 .post .banner img{
 width:100%;
@@ -289,6 +292,9 @@ line-height:1.625em;
 padding:1em 10%;
 overflow:hidden;
 word-break: break-word;
+}
+.post .cont img{
+width:100%;
 }
 .post p{
 margin:0;

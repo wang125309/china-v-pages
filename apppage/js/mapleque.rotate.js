@@ -2,7 +2,6 @@
 if (window.mapleque===undefined)window.mapleque={};
 if (window.mapleque.rotate!==undefined)return;
 mapleque.rotate=function(conf){
-console.log('init rotate',conf);
 var
   $contbox=conf.contbox,
   $contlist=$contbox?$contbox.children():[],
@@ -18,12 +17,14 @@ var
       'position':'absolute'
     });
   });
-console.log('index',index);
   var moveto=function(toindex){
     var oldindex=index;
+    if (toindex<0||toindex>$contlist.length-1){
+      document.location.href="index.html";
+      return;
+    }
     index=toindex<0?0:toindex;
     index=index>($contlist.length-1)?($contlist.length-1):index;
-    console.log('move to',oldindex,index);
     $contlist.each(function(i,e){
       var torotate=(index-i)*rotate;
       $(e).css({
@@ -42,7 +43,6 @@ console.log('index',index);
   var currotate=0,nextindex;
   var move=function(moving){
     var deltarotate=-180*Math.asin(moving/(2*step))/Math.PI;
-    console.log(deltarotate);
     $contlist.each(function(i,e){
       var torotate=(index-i)*rotate+deltarotate;
       $(e).css({
@@ -54,13 +54,11 @@ console.log('index',index);
     currotate=deltarotate;
   };
   var moveend=function(){
-    console.log('set transition rotate');
     $contlist.css({
       '-webkit-transition':'all 0.5s fast',
       '-moz-transition':'all 0.5s fast',
       'transition':'all 0.5s fast'
     });
-    console.log('move end',currotate,rotate);
     if (Math.abs(currotate)*2>rotate){
       var nextindex=currotate>0?parseInt(index)+1:parseInt(index)-1;
       moveto(nextindex);
@@ -74,7 +72,6 @@ console.log('index',index);
   startX,startLeft;
   /*
   $(document.body).mousedown(function(e){
-    console.log('set transition none');
     $contlist.each(function(){
       $(this).css({
         '-webkit-transition':'all 0s ease',
@@ -94,7 +91,6 @@ console.log('index',index);
     if (!sliding)return;
     sliding=false;
     moveend();
-    console.log(e);
   });
   $(document.body).mousemove(function(e){
     if (!sliding)return;
@@ -104,7 +100,6 @@ console.log('index',index);
   });
   */
   $(document.body).bind('touchstart',function(e){
-    console.log(e);
     $contlist.css({
       '-webkit-transition':'none',
       '-moz-transition':'none',
