@@ -3,6 +3,7 @@ width:100%;/*640px;*/
 height:100%;/*960px;*/
 margin:0;
 padding:0;
+background-color: #bd010d;
 }
 .main{
 position:relative;
@@ -12,7 +13,7 @@ text-align:center;
 overflow:hidden;
 white-space:nowrap;
 background:url(../images/sub-back.png?v1) no-repeat;
-background-size:100% 100%;
+background-size:100%;
 }
 .footer{
 position:absolute;
@@ -106,4 +107,7 @@ padding:35.3% 12.7% 0;/*36px 13px 0;*/
 }
 .btn4:nth-of-type(3) img{
 padding:35.3% 12.7% 0;/*36px 13px 0;*/
+}
+.top-position {
+vertical-align: top;
 }

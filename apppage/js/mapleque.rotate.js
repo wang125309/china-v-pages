@@ -18,6 +18,7 @@ var
       'position':'absolute'
     });
   });
+console.log('index',index);
   var moveto=function(toindex){
     var oldindex=index;
     index=toindex<0?0:toindex;
@@ -61,7 +62,7 @@ var
     });
     console.log('move end',currotate,rotate);
     if (Math.abs(currotate)*2>rotate){
-      var nextindex=currotate>0?index+1:index-1;
+      var nextindex=currotate>0?parseInt(index)+1:parseInt(index)-1;
       moveto(nextindex);
     }else{
       moveto(index);

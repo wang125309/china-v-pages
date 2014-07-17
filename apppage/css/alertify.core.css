@@ -67,11 +67,9 @@
 		margin-top: 10px;
 		position: relative;
 		right: -300px;
-		opacity: 0;
 	}
 	.alertify-log-show {
 		right: 0;
-		opacity: 1;
 	}
 	.alertify-log-hide {
 		-webkit-transform: translate(300px, 0);
