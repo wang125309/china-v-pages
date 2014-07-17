@@ -5,6 +5,8 @@
 <meta name="format-detection" content="telephone=no">
 <meta name="format-detection" content="address=no">
 <link href="css/sub.css" rel="stylesheet" type="text/css">
+<link href="css/alertify.core.css" rel="stylesheet" type="text/css">
+<link href="css/alertify.default.css" rel="stylesheet" type="text/css">
 <div class="main sub-7-4">
   <div class="banner">
     <img src="./images/back-7-4.png">
@@ -39,38 +41,42 @@
   </section>
   <section class="form">
     <div class="tit">请认真填写表单</div>
-    <form>
+    <form id="problem_form" onsubmit="return validateForm()">
       <div class="line">
         <label>反馈的问题类型</label>
-        <select name="">
+        <select name="problem_types">
         <option value="">请选择反馈问题类型</option>
-        <option value="">我来说说产品问题</option>
-        <option value="">我买不到加多宝</option>
-        <option value="">我要卖加多宝</option>
-        <option value="">我要和加多宝合作</option>
-        <option value="">我是媒体</option>
+        <option value="1">我来说说产品问题</option>
+        <option value="2">我买不到加多宝</option>
+        <option value="3">我要卖加多宝</option>
+        <option value="4">我要和加多宝合作</option>
+        <option value="5">我是媒体</option>
         </select>
         <span class="ico"></span>
       </div>
       <div class="line">
         <label>您的姓名</label>
-        <input type="" placeholder="请输入您的真实姓名" name="" data-validate="required"></input>
+        <input type="text" placeholder="请输入您的姓名" name="name"></input>
       </div>
       <div class="line">
         <label>您的电话</label>
-        <input type="" placeholder="请输入您的电话" name="" data-validate="phone"></input>
+        <input type="number" placeholder="请输入您的电话" name="phone"></input>
       </div>
       <div class="line">
         <label>您的邮箱</label>
-        <input type="" placeholder="请输入您的电子邮箱" name="" data-validate="email"></input>
+        <input type="email" placeholder="请输入您的电子邮箱" name="email"></input>
       </div>
       <div class="line">
         <label>情况说明</label>
-        <textarea value="" data-validate="required"></textarea>
+        <textarea name="describe" value=""></textarea>
       </div>
+      <div class="tip">电话、邮箱二选一，其他选项为必填项。</div>
       <div class="line">
         <input type="submit" value="提交表单" class="submit"></input>
       </div>
     </form>
   </section>
 </div>
+<script src="./js/jquery.js"></script>
+<script src="./js/alertify.js"></script>
+<script src="./js/verify.js"></script>

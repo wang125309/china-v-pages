@@ -178,6 +178,12 @@ font-size:1em;
 color:#fff;
 font-weight:bold;
 }
+.sub-7-4 .form .tip {
+    font-size: 12px;
+    color: #333;
+    margin-left:15px;
+    margin-bottom:10px;
+}
 ::-webkit-input-placeholder{
 color:#000;
 }
