@@ -290,6 +290,9 @@ padding:1em 10%;
 overflow:hidden;
 word-break: break-word;
 }
+.post .cont img{
+width:100%;
+}
 .post p{
 margin:0;
 padding:0;

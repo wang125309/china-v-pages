@@ -16,6 +16,7 @@ initFolder=function(){
     var totalHeight=0;
     $contlist.each(function(){
       totalHeight+=$(this).height();
+      console.log(totalHeight,$(this).height());
     });
     $box.css('max-height',totalHeight+'px');
   },function(){
@@ -62,7 +63,9 @@ initScroll=function(){
         $(e).addClass(curClass);
       else
         $(e).removeClass(curClass);
-    })
+    });
+    $('.scroll-banner .name').hide();
+    $($('.scroll-banner .name')[toindex]).show();
     curindex=toindex;
   };
   moveto(curindex);
