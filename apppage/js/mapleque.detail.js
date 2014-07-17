@@ -10,8 +10,10 @@ $(function(){
       rotate:25
     });
     $('#fan-center').bind('click',function(){
-        alertify.set({ delay: 2000});
-        alertify.log("粉丝中心即将开启，敬请期待！");
+        if ($('.alertify-log-show').length == 0){
+            alertify.set({ delay: 2000});
+            alertify.log("粉丝中心即将开启，敬请期待！");
+        }
     });
   });
 })();
