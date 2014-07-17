@@ -46,8 +46,9 @@ background-color:white;
   </section>
   <section class="form">
     <div class="tit">请认真填写表单</div>
-    <form id="problem_form" onsubmit="return validateForm()" method="post" action="http://bl.limijiaoyin.com/custom_service" enctype="multipart/form-data">
-      <div class="line">
+    <form id="problem_form" onsubmit="return validateForm()" method="post" action="/custom_service" enctype="multipart/form-data">
+        <input type="hidden" name="csrfmiddlewaretoken" class="csrf" value=""/>
+        <div class="line">
         <label>反馈的问题类型</label>
         <select name="problem_types">
         <option value="">请选择反馈问题类型</option>
@@ -77,7 +78,7 @@ background-color:white;
       </div>
       <div class="tip">电话、邮箱二选一，其他选项为必填项。</div>
       <div class="line">
-        <input type="submit" value="提交表单" class="submit"></input>
+        <input type="button" value="提交表单" class="submit_button submit"></input>
       </div>
     </form>
   </section>
@@ -86,3 +87,14 @@ background-color:white;
 <script src="./js/jquery.js"></script>
 <script src="./js/alertify.js"></script>
 <script src="./js/verify.js"></script>
+<script>
+    jQuery(function(){
+        jQuery(".submit_button").click(function(){
+            jQuery.get("/csrf_get",function(data){
+               jQuery(".csrf").val(data.re);
+               jQuery("#problem_form").submit();
+
+            }); 
+        })
+    });
+</script>
