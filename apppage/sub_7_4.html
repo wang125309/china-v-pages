@@ -7,6 +7,11 @@
 <link href="css/sub.css" rel="stylesheet" type="text/css">
 <link href="css/alertify.core.css" rel="stylesheet" type="text/css">
 <link href="css/alertify.default.css" rel="stylesheet" type="text/css">
+<style>
+.main{
+background-color:white;
+}
+</style>
 <div class="main sub-7-4">
   <div class="banner">
     <img src="./images/back-7-4.png">
@@ -35,14 +40,15 @@
   </section>
   <section class="tel">
     <span class="ico"></span>
-    <span class="num">4008106388</span>
+    <span class="num" style="padding-right:0.5em">4008106388</span>
     <span class="name">消费者服务中心</span>
     <span class="arr"></span>
   </section>
   <section class="form">
     <div class="tit">请认真填写表单</div>
-    <form id="problem_form" onsubmit="return validateForm()" method="post" action="bl.limijiaoyin.com/custom_service/" enctype="multipart/form-data">
-      <div class="line">
+    <form id="problem_form" onsubmit="return validateForm()" method="post" action="/custom_service" enctype="multipart/form-data">
+        <input type="hidden" name="csrfmiddlewaretoken" class="csrf" value=""/>
+        <div class="line">
         <label>反馈的问题类型</label>
         <select name="problem_types">
         <option value="">请选择反馈问题类型</option>
@@ -72,11 +78,23 @@
       </div>
       <div class="tip">电话、邮箱二选一，其他选项为必填项。</div>
       <div class="line">
-        <input type="submit" value="提交表单" class="submit"></input>
+        <input type="button" value="提交表单" class="submit_button submit"></input>
       </div>
     </form>
   </section>
+<div style="height:3px;"></div>
 </div>
 <script src="./js/jquery.js"></script>
 <script src="./js/alertify.js"></script>
 <script src="./js/verify.js"></script>
+<script>
+    jQuery(function(){
+        jQuery(".submit_button").click(function(){
+            jQuery.get("/csrf_get",function(data){
+               jQuery(".csrf").val(data.re);
+               jQuery("#problem_form").submit();
+
+            }); 
+        })
+    });
+</script>
