@@ -16,7 +16,6 @@ initFolder=function(){
     var totalHeight=0;
     $contlist.each(function(){
       totalHeight+=$(this).height();
-      console.log(totalHeight,$(this).height());
     });
     $box.css('max-height',totalHeight+'px');
   },function(){
