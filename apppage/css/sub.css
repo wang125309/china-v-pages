@@ -191,7 +191,7 @@ color:#000;
 /*新闻页*/
 .scroll-banner{
 width:100%;
-max-height:9.625em;
+/*max-height:9.625em;*/
 position:relative;
 }
 .scroll-banner .box{

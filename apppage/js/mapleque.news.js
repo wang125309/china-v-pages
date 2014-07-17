@@ -64,6 +64,7 @@ initScroll=function(){
       else
         $(e).removeClass(curClass);
     });
+    $($bannerlist[toindex]).show();
     $('.scroll-banner .name').hide();
     $($('.scroll-banner .name')[toindex]).show();
     curindex=toindex;
