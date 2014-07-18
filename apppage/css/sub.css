@@ -7,9 +7,6 @@ font-family: "Microsoft YaHei";
 font-size:16px;
 background-color: #bd010d;
 }
-@media only screen and (-webkit-min-device-pixel-ratio:2.5){
-html,body{font-size:24px;}
-}
 a{
 text-decoration:none;
 color:inherit;
