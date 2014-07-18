@@ -1,4 +1,11 @@
 (function(){
+wechatShare({
+  title: "正宗凉茶的无限可能",
+  desc: "夏天有三宝，V罐、好声音、加多宝",
+  link: "http://wx.jdb.cn/",
+  imgUrl: "/static/img/share.jpg"
+});
+
 $(
 function(){
   mapleque.slide({
